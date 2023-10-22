@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Thread;
+use App\Models\Category;
 
 class PageController extends Controller
 {
@@ -15,8 +16,9 @@ class PageController extends Controller
         return view('home', compact('threads'));
     }
 
-    public function category($category){
-        return view('category', compact('category'));
+    public function category(Category $category){
+        $threads = $category->threads()->orderBy('id', 'DESC')->paginate();
+        return view('category', compact('category', 'threads'));
     }
 
     public function tag($tag){
