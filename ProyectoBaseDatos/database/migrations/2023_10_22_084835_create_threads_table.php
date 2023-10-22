@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->text('body');
+
             $table->timestamps();
         });
     }
