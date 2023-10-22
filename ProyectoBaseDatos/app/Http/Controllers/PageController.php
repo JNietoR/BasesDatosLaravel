@@ -8,19 +8,19 @@ class PageController extends Controller
 {
     
     public function home(){
-        return 'home';
+        return view('home');
     }
 
     public function category($category){
-        return 'category '. $category;
+        return view('category', compact('category'));
     }
 
     public function tag($tag){
-        return 'tag '. $tag;
+        return view('tag', compact('tag'));
     }
 
     public function thread($thread){
-        return 'thread '. $thread;
+        return view('thread', compact('thread'));
     }
 
 
