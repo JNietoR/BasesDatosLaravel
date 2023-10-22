@@ -38,7 +38,7 @@
                 </span>
             </span>
 
-            <a href="#" class="text-indigo-600">Ver &rarr;</a>
+            <a href="{{ route('page.thread', $thread->slug) }}" class="text-indigo-600">Ver &rarr;</a>
         </div>
     </div>
 </div>
